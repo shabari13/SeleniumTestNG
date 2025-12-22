@@ -16,7 +16,7 @@ public class GoogleSearchTest {
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
         // Uncomment for headless mode
-        // options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         
