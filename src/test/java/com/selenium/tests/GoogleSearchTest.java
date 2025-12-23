@@ -29,6 +29,7 @@ public class GoogleSearchTest {
         driver.get("https://www.google.com");
         String title = driver.getTitle();
         System.out.println("Page Title: " + title);
+        System.out.println("Successfully tested code change trigger");
         Assert.assertTrue(title.contains("Google"), "Title doesn't contain Google!");
     }
     
