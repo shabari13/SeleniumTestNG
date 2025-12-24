@@ -28,7 +28,7 @@ public class AmazonSignInTest {
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
         // Uncomment for headless mode (for Jenkins)
-        // options.addArguments("--headless");
+        options.addArguments("--headless");
         String tempProfile = System.getProperty("java.io.tmpdir") + "/selenium_" + System.currentTimeMillis();
         options.addArguments("--user-data-dir=" + tempProfile);
         options.addArguments("--incognito");
