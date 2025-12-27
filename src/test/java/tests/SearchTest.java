@@ -11,14 +11,14 @@ public class SearchTest extends BaseTest {
     
     @Test
     public void testProductSearch() {
-        // Login first
+
         LoginPage loginPage = new LoginPage(driver);
         loginPage.performLogin(
             ConfigReader.getTestEmail(), 
             ConfigReader.getTestPassword()
         );
         
-        // Search for product
+
         SearchPage searchPage = new SearchPage(driver);
         searchPage.searchForProduct(ConfigReader.getProperty("searchProduct"));
         

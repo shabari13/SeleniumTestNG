@@ -7,4 +7,10 @@
             <class name="com.selenium.tests.LoginTest"/>
         </classes>
     </test>
+    <test name="All Tests">
+        <packages>
+            <!-- This automatically runs ALL test classes in this package -->
+            <package name="tests"/>
+        </packages>
+    </test>
 </suite>

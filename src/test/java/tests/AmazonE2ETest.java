@@ -10,7 +10,7 @@ public class AmazonE2ETest extends BaseTest {
     
     @Test
     public void testAmazonEndToEndFlow() {
-        // Step 1: Login
+      
         LoginPage loginPage = new LoginPage(driver);
         loginPage.performLogin(
             ConfigReader.getTestEmail(), 
@@ -20,7 +20,7 @@ public class AmazonE2ETest extends BaseTest {
         Assert.assertTrue(loginPage.isLoggedIn(), "User should be logged in");
         System.out.println("✓ Successfully logged in");
         
-        // Step 2: Search for product
+     
         SearchPage searchPage = new SearchPage(driver);
         String searchProduct = ConfigReader.getProperty("searchProduct");
         searchPage.searchForProduct(searchProduct);
@@ -31,17 +31,17 @@ public class AmazonE2ETest extends BaseTest {
         );
         System.out.println("✓ Product found in search results");
         
-        // Step 3: Click on product
+        
         String productAsin = ConfigReader.getProperty("productAsin");
         searchPage.clickProductByAsin(productAsin);
         
-        // Step 4: Add to cart
+        
         ProductPage productPage = new ProductPage(driver);
         productPage.addToCart();
         
         String count = productPage.getCartCount();
     	
-        // Verify it's 1
+       
        if (count.equals("1")) {
             System.out.println("Item successfully added to cart!");
        } else {
@@ -54,11 +54,10 @@ public class AmazonE2ETest extends BaseTest {
 		 * System.out.println("✓ Item successfully added to cart");
 		 */
         
-        // Step 5: Proceed to checkout
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.proceedToCheckout();
         
-        // Step 6: Add payment card (with invalid details)
+       
         checkoutPage.clickAddCardLink();
         checkoutPage.switchToPaymentFrame();
         
@@ -72,7 +71,7 @@ public class AmazonE2ETest extends BaseTest {
         
         checkoutPage.submitCard();
         
-        // Step 7: Verify error message
+        
         Assert.assertTrue(
             checkoutPage.isErrorDisplayed(),
             "Error message should be displayed for invalid card"
