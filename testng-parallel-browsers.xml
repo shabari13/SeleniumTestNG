@@ -8,9 +8,6 @@
    <!--  Chrome Tests -->
    <test name="Chrome Tests">
         <parameter name="browser" value="chrome"/>
-        <packages>
-            <package name="tests"/>
-        </packages>
         <classes>
             <class name="tests.AmazonE2ETest"/>
         </classes>
@@ -19,9 +16,6 @@
     <!-- Firefox Tests -->
     <test name="Firefox Tests">
         <parameter name="browser" value="firefox"/>
-        <packages>
-            <package name="tests"/>
-        </packages>
          <classes>
             <class name="tests.AmazonE2ETest"/>
         </classes>
