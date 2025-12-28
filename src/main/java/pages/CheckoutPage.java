@@ -69,14 +69,23 @@ public class CheckoutPage extends BasePage {
         System.out.println("Entered card holder name: " + cardHolder);
         waitForSeconds(2);
         
-     
-        selectDropdownByValue(monthDropdown, month);
+		/*
+		 * selectDropdownByValue(monthDropdown, month);
+		 * System.out.println("Selected expiry month: " + month); waitForSeconds(2);
+		 * 
+		 * 
+		 * selectDropdownByValue(yearDropdown, year);
+		 * System.out.println("Selected expiry year: " + year); waitForSeconds(3);
+		 */
+        
+        selectDropdownByValueUsingJS(monthDropdown, month);
         System.out.println("Selected expiry month: " + month);
+        waitForSeconds(1);
         
-        
-        selectDropdownByValue(yearDropdown, year);
+        // Select year using JavaScript (Firefox-compatible)
+        selectDropdownByValueUsingJS(yearDropdown, year);
         System.out.println("Selected expiry year: " + year);
-        waitForSeconds(3);
+        waitForSeconds(1);
         
         click(cvvInput);
         clear(cvvInput);

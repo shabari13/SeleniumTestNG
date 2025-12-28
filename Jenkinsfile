@@ -14,7 +14,8 @@ pipeline {
         
         stage('Test') {
             steps {
-                sh 'mvn clean test'
+                /*sh 'mvn clean test'*/
+                sh 'mvn clean test -DsuiteXmlFile=testng-parallel-browsers.xml'
             }
         }
     }

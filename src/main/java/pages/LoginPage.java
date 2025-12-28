@@ -65,6 +65,7 @@ public class LoginPage extends BasePage {
     }
     
     public void performLogin(String email, String password) {
+    	handleContinueShoppingIfPresent();
         hoverOverAccountAndLists();
         clickSignInButton();
         waitForSeconds(2);

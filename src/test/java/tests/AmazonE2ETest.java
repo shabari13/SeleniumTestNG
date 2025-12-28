@@ -12,6 +12,7 @@ public class AmazonE2ETest extends BaseTest {
     public void testAmazonEndToEndFlow() {
       
         LoginPage loginPage = new LoginPage(driver);
+        System.out.println("In E2E");
         loginPage.performLogin(
             ConfigReader.getTestEmail(), 
             ConfigReader.getTestPassword()
