@@ -49,6 +49,7 @@ public class AmazonE2ETest extends BaseTest {
             System.out.println("Cart count is: " + count);
        }
         
+       System.out.println("test 123");
 		/*
 		 * Assert.assertTrue( productPage.isCartCountUpdated("1"),
 		 * "Cart count should be updated to 1" );
