@@ -78,5 +78,9 @@ public class BaseTest {
             System.out.println("Browser closed successfully");
         }
     }
+    
+    public WebDriver getDriver() {
+        return driver;
+    }
 }
 
