@@ -1,18 +1,18 @@
 pipeline {
     agent any
-    
+
     tools {
         maven 'Maven3.9.12'
     }
-    
+
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-        
-      stage('Test') {
+
+        stage('Test') {
             steps {
                 script {
                     try {
@@ -24,11 +24,13 @@ pipeline {
                 }
             }
         }
-    steps {
+
+        stage('Publish Reports') {  // <--- Added this stage wrapper
+            steps {
                 script {
-                    junit allowEmptyResults: true, 
+                    junit allowEmptyResults: true,
                          testResults: '**/target/surefire-reports/*.xml'
-                    
+
                     publishHTML([
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
@@ -38,24 +40,23 @@ pipeline {
                         reportName: 'Extent Report',
                         reportTitles: 'Selenium Test Report'
                     ])
-                    
-                    archiveArtifacts artifacts: 'test-output/screenshots/**/*.png', 
+
+                    archiveArtifacts artifacts: 'test-output/screenshots/**/*.png',
                                    allowEmptyArchive: true,
                                    fingerprint: true
-                    
-                    archiveArtifacts artifacts: 'test-output/ExtentReports/**/*.html', 
+
+                    archiveArtifacts artifacts: 'test-output/ExtentReports/**/*.html',
                                    allowEmptyArchive: true,
                                    fingerprint: true
                 }
             }
         }
     }
-    
-    
+
     post {
         always {
             echo 'Test execution completed'
-            
+
             emailext (
                 subject: "Test Report: ${currentBuild.fullDisplayName}",
                 body: """
