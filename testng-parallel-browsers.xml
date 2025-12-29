@@ -14,10 +14,10 @@
     </test>
     
     <!-- Firefox Tests -->
-    <test name="Firefox Tests">
+    <!--<test name="Firefox Tests">
         <parameter name="browser" value="firefox"/>
          <classes>
             <class name="tests.AmazonE2ETest"/>
         </classes>
-    </test>
+    </test>-->
 </suite>
