@@ -27,7 +27,7 @@ public class AmazonE2ETest extends BaseTest {
 		            ConfigReader.getTestEmail(), 
 		            ConfigReader.getTestPassword()
 		        );
-		        Thread.sleep(15000);
+		        
 		        logger.info("Login performed with credentials");
 		        Assert.assertTrue(loginPage.isLoggedIn(), "User should be logged in");
 		        LoggerUtil.logInfo(logger, "✓ User successfully logged in");
