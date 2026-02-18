@@ -73,7 +73,7 @@ public class LoginPage extends BasePage {
         clickContinue();
         enterPassword(password);
         clickSignIn();
-        waitForSeconds(15);
+        waitForSeconds(10);
     }
     
     public boolean isLoggedIn() {

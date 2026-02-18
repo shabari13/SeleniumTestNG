@@ -26,6 +26,12 @@
             <version>4.39.0</version>
         </dependency>
         
+	    <dependency>
+		    <groupId>com.aventstack</groupId>
+		    <artifactId>extentreports</artifactId>
+		    <version>5.1.1</version>
+		</dependency>
+        
         <!-- TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
